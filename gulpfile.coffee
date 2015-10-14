@@ -5,7 +5,7 @@ jsonTransform   = require 'gulp-json-transform'
 gutil           = require 'gulp-util'
 clean           = require 'gulp-clean'
 RegistryMangler = require './registry-mangler'
-
+cors = require 'cors'
 registryUrl = process.env.NODE_REGISTRY_URL || 'https://raw.githubusercontent.com/octoblu/nanocyte-node-registry/master/registry.json'
 
 gulp.task 'clean', ->
@@ -23,9 +23,11 @@ gulp.task 'server', ->
   gulp
     .src('public')
     .pipe(server({
+      port: process.env.PORT || 9999
       livereload: false,
       directoryListing: false,
       open: false,
+      middleware: [cors()]
     }))
 
 gulp.task 'default', ['clean', 'build', 'server']
