@@ -1,0 +1,34 @@
+{
+  "name": "nanocyte-node-registry-local",
+  "version": "1.0.0",
+  "description": "Octoblu uptime dashboard",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "coffee-script": "^1.9.3",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-download": "0.0.1",
+    "gulp-json-transform": "^0.2.0",
+    "gulp-util": "^3.0.6",
+    "gulp-webserver": "^0.9.1",
+    "lodash": "^3.10.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octoblu/nanocyte-node-registry-local.git"
+  },
+  "keywords": [
+    "Octoblu",
+    "Dashboard"
+  ],
+  "author": "Octoblu Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octoblu/nanocyte-node-registry-local/issues"
+  },
+  "homepage": "https://github.com/octoblu/nanocyte-node-registry-local#readme"
+}
