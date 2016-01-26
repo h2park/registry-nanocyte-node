@@ -30,17 +30,12 @@ gulp.task 'build', ->
               'type': 'nanocyte-component-octoblu-credentials-message-formatter'
               'linkedToPrev': true
               'linkedToOutput': true
-            'pass-through':
-              'type': 'nanocyte-component-pass-through'
-              'linkedToInput': true
-              'linkedToNext': true
             'octoblu-credentials-configurator':
               'type': 'nanocyte-component-octoblu-credentials-configurator'
-              'linkedToPrev': true
+              'linkedToInput': true
               'linkedTo': ['octoblu-channel']
             'octoblu-channel':
               'type': 'nanocyte-component-octoblu-channel-request-formatter'
-              'linkedToPrev': true
               'linkedTo': ['http-request']
             'http-request':
               'type': 'nanocyte-component-http-request'
