@@ -1,6 +1,6 @@
 {
   "sendWhitelist": [
-    "765bd3a4-546d-45e6-a62f-1157281083f0"
+    "{{interval_service_uuid}}"
   ],
   "composedOf": {
     "register": {

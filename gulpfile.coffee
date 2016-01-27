@@ -7,28 +7,20 @@ ChristacheioStream = require 'gulp-json-template-christacheio'
 localIntervalUUID = process.env.NANOCYTE_INTERVAL_UUID
 localCredentialsServiceUUID = process.env.CREDENTIALS_SERVICE_UUID
 
+templateData =
+  interval_service_uuid: process.env.NANOCYTE_INTERVAL_UUID || '765bd3a4-546d-45e6-a62f-1157281083f0'
+  credentials_service_uuid : localCredentialsServiceUUID
+
 gulp.task 'clean', ->
   gulp.src('dist', read: false).pipe clean()
 
 gulp.task 'build', ->
   console.log 'building'
-  christacheioStream = new ChristacheioStream  data: hello: 'world'
+  christacheioStream = new ChristacheioStream  data: templateData
   gulp.src('./nanocyte-definitions/**/*.json')
     .pipe jsonCombine('registry.json', (data) -> new Buffer(JSON.stringify(data, null, 2)))
     .pipe christacheioStream
     .pipe gulp.dest './dist'
-
-gulp.task '_build', ->
-  mangler = new RegistryMangler
-  download(registryUrl)
-    .pipe jsonTransform (originalRegistry) =>
-      replaceMap =
-        '765bd3a4-546d-45e6-a62f-1157281083f0' : localIntervalUUID
-        'CREDENTIALS_SERVICE_UUID' : localCredentialsServiceUUID
-
-      mangler.mangle originalRegistry: originalRegistry, replaceMap: replaceMap, replaceNodes: replaceNodes
-    .pipe gulp.dest './public'
-
 
 gulp.task 'watch', ->
   gulp.watch(['./nanocyte-definitions/**/*.json'], ['build']);
