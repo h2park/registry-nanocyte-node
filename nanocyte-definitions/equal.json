@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "equal": {
+      "type": "nanocyte-component-equal",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}

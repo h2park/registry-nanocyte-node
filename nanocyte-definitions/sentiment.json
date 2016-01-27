@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "sentiment": {
+      "type": "nanocyte-component-sentiment",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}

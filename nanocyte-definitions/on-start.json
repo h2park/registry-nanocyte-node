@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "onstart": {
+      "type": "nanocyte-component-onstart",
+      "linkedFromStart": true,
+      "linkedToNext": true
+    }
+  }
+}

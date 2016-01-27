@@ -1,0 +1,10 @@
+{
+  "composedOf": {
+    "broadcast": {
+      "type": "nanocyte-component-broadcast",
+      "linkedToPrev": true,
+      "linkedToOutput": true,
+      "linkedToPulse": true
+    }
+  }
+}

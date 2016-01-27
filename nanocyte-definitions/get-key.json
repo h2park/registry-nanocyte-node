@@ -1,0 +1,27 @@
+{
+  "composedOf": {
+    "http-formatter": {
+      "type": "nanocyte-component-http-formatter",
+      "linkedToPrev": true,
+      "linkedTo": [
+        "http-request"
+      ]
+    },
+    "http-request": {
+      "type": "nanocyte-component-http-request",
+      "linkedTo": [
+        "parse-body"
+      ]
+    },
+    "parse-body": {
+      "type": "nanocyte-component-body-parser",
+      "linkedTo": [
+        "get-key-from-data"
+      ]
+    },
+    "get-key-from-data": {
+      "type": "nanocyte-component-get-key-from-data",
+      "linkedToNext": true
+    }
+  }
+}

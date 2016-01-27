@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "math": {
+      "type": "nanocyte-component-math",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}

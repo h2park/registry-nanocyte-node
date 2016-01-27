@@ -1,0 +1,38 @@
+{
+  "sendWhitelist": [
+    "765bd3a4-546d-45e6-a62f-1157281083f0"
+  ],
+  "composedOf": {
+    "register": {
+      "type": "nanocyte-component-interval-register",
+      "linkedFromStart": true,
+      "linkedToOutput": true
+    },
+    "unregister": {
+      "type": "nanocyte-component-interval-unregister",
+      "linkedFromStop": true,
+      "linkedToOutput": true
+    },
+    "collect-message": {
+      "type": "nanocyte-component-push-message-on-data",
+      "linkedToPrev": true,
+      "linkedToData": true
+    },
+    "handle-errors": {
+      "type": "nanocyte-component-input-error",
+      "linkedToInput": true,
+      "linkedTo": [
+        "shift-send",
+        "shift-messages"
+      ]
+    },
+    "shift-send": {
+      "type": "nanocyte-component-shift-send",
+      "linkedToNext": true
+    },
+    "shift-messages": {
+      "type": "nanocyte-component-shift-messages",
+      "linkedToData": true
+    }
+  }
+}

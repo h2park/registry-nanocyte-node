@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "pluck": {
+      "type": "nanocyte-component-pluck",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}

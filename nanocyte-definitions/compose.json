@@ -1,0 +1,23 @@
+{
+  "composedOf": {
+    "collect": {
+      "type": "nanocyte-component-selective-collect",
+      "linkedToPrev": true,
+      "linkedTo": [
+        "check"
+      ],
+      "linkedToData": true
+    },
+    "check": {
+      "type": "nanocyte-component-contains-all-keys",
+      "linkedTo": [
+        "clear"
+      ],
+      "linkedToNext": true
+    },
+    "clear": {
+      "type": "nanocyte-component-clear-data",
+      "linkedToData": true
+    }
+  }
+}

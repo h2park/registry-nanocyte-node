@@ -1,0 +1,31 @@
+{
+  "composedOf": {
+    "config-as-message": {
+      "type": "nanocyte-component-config-as-message",
+      "linkedTo": [
+        "http-formatter"
+      ],
+      "linkedToPrev": true
+    },
+    "http-formatter": {
+      "type": "nanocyte-component-http-formatter",
+      "linkedTo": [
+        "http-request"
+      ]
+    },
+    "http-request": {
+      "type": "nanocyte-component-http-request",
+      "linkedTo": [
+        "parse-body"
+      ]
+    },
+    "parse-body": {
+      "type": "nanocyte-component-body-parser"
+    },
+    "pass-through": {
+      "type": "nanocyte-component-pass-through",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}

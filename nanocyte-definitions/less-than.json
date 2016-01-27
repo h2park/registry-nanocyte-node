@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "less-than": {
+      "type": "nanocyte-component-less-than",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}

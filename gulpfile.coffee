@@ -1,40 +1,20 @@
 gulp          = require 'gulp'
-download      = require 'gulp-download'
-jsonTransform = require 'gulp-json-transform'
-jsonCombine   = require 'gulp-jsoncombine'
 clean         = require 'gulp-clean'
-mergeStream   = require 'merge-stream'
-mergeJson     = require 'gulp-merge-json'
-order         = require 'gulp-order'
+jsonCombine     = require 'gulp-jsoncombine'
 connect       = require 'gulp-connect'
 cors          = require 'cors'
 ChristacheioStream = require 'gulp-json-template-christacheio'
-
-RegistryMangler = require './registry-mangler'
-
-registryUrl = process.env.NODE_REGISTRY_URL || 'https://raw.githubusercontent.com/octoblu/nanocyte-node-registry/master/registry.json'
 localIntervalUUID = process.env.NANOCYTE_INTERVAL_UUID
 localCredentialsServiceUUID = process.env.CREDENTIALS_SERVICE_UUID
 
 gulp.task 'clean', ->
-  gulp.src 'public', read: false
-    .pipe clean()
-
-
-gulp.task 'get-production-registry', ->
-  download(registryUrl)
-    .pipe gulp.dest './dist'
-
+  gulp.src('dist', read: false).pipe clean()
 
 gulp.task 'build', ->
+  console.log 'building'
   christacheioStream = new ChristacheioStream  data: hello: 'world'
-  devNanocytes =
-    gulp.src('./nanocyte-definitions/**/*.json')
-      .pipe jsonCombine('new-nanocytes.json', (data) -> new Buffer(JSON.stringify(data, null, 2)))
-
-  mergeStream(devNanocytes, download(registryUrl))
-    .pipe order(['registry.json', 'new-nanocytes.json'])
-    .pipe mergeJson('registry.json')
+  gulp.src('./nanocyte-definitions/**/*.json')
+    .pipe jsonCombine('registry.json', (data) -> new Buffer(JSON.stringify(data, null, 2)))
     .pipe christacheioStream
     .pipe gulp.dest './dist'
 
@@ -49,9 +29,9 @@ gulp.task '_build', ->
       mangler.mangle originalRegistry: originalRegistry, replaceMap: replaceMap, replaceNodes: replaceNodes
     .pipe gulp.dest './public'
 
+
 gulp.task 'watch', ->
   gulp.watch(['./nanocyte-definitions/**/*.json'], ['build']);
-
 
 gulp.task 'server', ->
   connect.server
@@ -59,4 +39,4 @@ gulp.task 'server', ->
     port: process.env.PORT || 9999
     middleware: -> [cors()]
 
-gulp.task 'default', ['clean', 'build', 'server']
+gulp.task 'default', ['clean', 'build', 'watch', 'server']

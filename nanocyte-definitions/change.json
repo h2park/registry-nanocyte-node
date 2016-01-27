@@ -1,0 +1,10 @@
+{
+  "composedOf": {
+    "change": {
+      "type": "nanocyte-component-change",
+      "linkedToPrev": true,
+      "linkedToNext": true,
+      "linkedToData": true
+    }
+  }
+}

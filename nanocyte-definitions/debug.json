@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "debug": {
+      "type": "nanocyte-component-pass-through",
+      "linkedToPrev": true,
+      "linkedToPulse": true
+    }
+  }
+}

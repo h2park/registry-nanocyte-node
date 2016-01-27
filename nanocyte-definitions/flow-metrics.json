@@ -1,0 +1,14 @@
+{
+  "composedOf": {
+    "flow-metric-start": {
+      "type": "nanocyte-component-flow-metric-start",
+      "linkedFromStart": true,
+      "linkedToOutput": true
+    },
+    "flow-metric-stop": {
+      "type": "nanocyte-component-flow-metric-stop",
+      "linkedFromStop": true,
+      "linkedToOutput": true
+    }
+  }
+}

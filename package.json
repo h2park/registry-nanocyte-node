@@ -3,22 +3,16 @@
   "bugs": {
     "url": "https://github.com/octoblu/nanocyte-node-registry-local/issues"
   },
-
   "devDependencies": {
     "coffee-script": "^1.9.3",
     "cors": "^2.7.1",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
     "gulp-connect": "^2.3.1",
-    "gulp-download": "0.0.1",
-    "gulp-json-transform": "^0.2.0",
     "gulp-jsoncombine": "^1.0.3",
-    "gulp-merge-json": "^0.2.0",
-    "gulp-order": "^1.1.1",
     "lodash": "^3.10.1",
-    "merge-stream": "^1.0.0"
+    "gulp-json-template-christacheio": "^1.0.0"
   },
-
   "description": "Octoblu uptime dashboard",
   "homepage": "https://github.com/octoblu/nanocyte-node-registry-local#readme",
   "keywords": [
@@ -36,5 +30,7 @@
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
-  "version": "1.0.1"
+  "version": "1.0.1",
+  "dependencies": {
+  }
 }

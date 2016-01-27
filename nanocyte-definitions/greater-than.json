@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "greater-than": {
+      "type": "nanocyte-component-greater-than",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}

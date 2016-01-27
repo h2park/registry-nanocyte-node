@@ -1,0 +1,27 @@
+{
+  "composedOf": {
+    "collect": {
+      "type": "nanocyte-component-collect",
+      "linkedToPrev": true,
+      "linkedTo": [
+        "clear-if-length-greater-than-max-else-pass-through",
+        "pass-through-if-length-greater-than-min"
+      ]
+    },
+    "clear-if-length-greater-than-max-else-pass-through": {
+      "type": "nanocyte-component-clear-if-length-greater-than-max-else-pass-through",
+      "linkedToData": true,
+      "linkedToPulse": true
+    },
+    "pass-through-if-length-greater-than-min": {
+      "type": "nanocyte-component-pass-through-if-length-greater-than-min",
+      "linkedTo": [
+        "map-message-to-key"
+      ]
+    },
+    "map-message-to-key": {
+      "type": "nanocyte-component-map-message-to-key",
+      "linkedToNext": true
+    }
+  }
+}

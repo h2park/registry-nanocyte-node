@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "range": {
+      "type": "nanocyte-component-range",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "sample": {
+      "type": "nanocyte-component-sample",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "demultiplex": {
+      "type": "nanocyte-component-demultiplex",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}
