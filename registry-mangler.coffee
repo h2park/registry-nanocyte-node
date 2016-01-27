@@ -6,7 +6,6 @@ class RegistryMangler
 
     _.each replaceNodes, (value, key) =>
       originalRegistry[key] = value
-
     registryString = JSON.stringify originalRegistry, null, 2
 
     _.each replaceMap, (value, key) =>

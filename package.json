@@ -1,6 +1,6 @@
 {
   "name": "nanocyte-node-registry-local",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Octoblu uptime dashboard",
   "main": "gulpfile.js",
   "dependencies": {
@@ -8,12 +8,16 @@
     "cors": "^2.7.1",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
-    "gulp-connect": "^2.2.0",
+    "gulp-connect": "^2.3.1",
     "gulp-download": "0.0.1",
     "gulp-json-transform": "^0.2.0",
+    "gulp-jsoncombine": "^1.0.3",
+    "gulp-merge-json": "^0.2.0",
+    "gulp-order": "^1.1.1",
+    "gulp-template": "^3.1.0",
     "gulp-util": "^3.0.6",
-    "gulp-webserver": "^0.9.1",
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "merge-stream": "^1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",

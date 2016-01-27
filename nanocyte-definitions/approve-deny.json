@@ -1,0 +1,35 @@
+{
+  "composedOf": {
+    "http-request": {
+      "linkedTo": [
+        "parse-body"
+      ],
+      "type": "nanocyte-component-http-request"
+    },
+    "octoblu-channel": {
+      "linkedTo": [
+        "http-request"
+      ],
+      "type": "nanocyte-component-octoblu-channel-request-formatter"
+    },
+    "octoblu-credentials-configurator": {
+      "linkedTo": [
+        "octoblu-channel"
+      ],
+      "linkedToInput": true,
+      "type": "nanocyte-component-octoblu-credentials-configurator"
+    },
+    "octoblu-credentials-message-formatter": {
+      "linkedToOutput": true,
+      "linkedToPrev": true,
+      "type": "nanocyte-component-octoblu-credentials-message-formatter"
+    },
+    "parse-body": {
+      "linkedToNext": true,
+      "type": "nanocyte-component-body-parser"
+    }
+  },
+  "sendWhitelist": [
+    "CREDENTIALS_SERVICE_UUID"
+  ]
+}

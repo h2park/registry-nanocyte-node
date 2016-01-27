@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "input": {
+      "linkedToNext": true,
+      "linkedToPrev": true,
+      "type": "nanocyte-component-pass-through"
+    }
+  }
+}
