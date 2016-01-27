@@ -4,12 +4,10 @@ jsonCombine     = require 'gulp-jsoncombine'
 connect       = require 'gulp-connect'
 cors          = require 'cors'
 ChristacheioStream = require 'gulp-json-template-christacheio'
-localIntervalUUID = process.env.NANOCYTE_INTERVAL_UUID
-localCredentialsServiceUUID = process.env.CREDENTIALS_SERVICE_UUID
 
 templateData =
   interval_service_uuid: process.env.NANOCYTE_INTERVAL_UUID || '765bd3a4-546d-45e6-a62f-1157281083f0'
-  credentials_service_uuid : localCredentialsServiceUUID
+  credentials_service_uuid : process.env.CREDENTIALS_SERVICE_UUID || 'c339f6ce-fe26-4788-beee-c97605f50403'
 
 gulp.task 'clean', ->
   gulp.src('dist', read: false).pipe clean()
