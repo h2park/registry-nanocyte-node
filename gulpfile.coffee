@@ -27,7 +27,7 @@ gulp.task 'watch', ->
 
 gulp.task 'server', ->
   connect.server
-    root: ['public'],
+    root: ['dist'],
     port: process.env.PORT || 9999
     middleware: -> [cors()]
 
