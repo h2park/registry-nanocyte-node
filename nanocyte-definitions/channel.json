@@ -1,5 +1,5 @@
 {
-  "sendWhitelist":"{{credentials_service_uuid}}",
+  "sendWhitelist":["{{credentials_service_uuid}}"],
   "composedOf": {
     "octoblu-credentials-message-formatter": {
       "type": "nanocyte-component-octoblu-credentials-message-formatter",
