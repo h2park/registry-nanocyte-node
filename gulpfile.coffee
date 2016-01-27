@@ -13,7 +13,6 @@ gulp.task 'clean', ->
   gulp.src('dist', read: false).pipe clean()
 
 gulp.task 'build', ->
-  console.log 'building'
   christacheioStream = new ChristacheioStream  data: templateData
   gulp.src('./nanocyte-definitions/**/*.json')
     .pipe jsonCombine('registry.json', (data) -> new Buffer(JSON.stringify(data, null, 2)))
