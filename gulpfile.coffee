@@ -8,6 +8,7 @@ mergeJson     = require 'gulp-merge-json'
 order         = require 'gulp-order'
 connect       = require 'gulp-connect'
 cors          = require 'cors'
+ChristacheioStream = require 'gulp-json-template-christacheio'
 
 RegistryMangler = require './registry-mangler'
 
@@ -19,7 +20,14 @@ gulp.task 'clean', ->
   gulp.src 'public', read: false
     .pipe clean()
 
+
+gulp.task 'get-production-registry', ->
+  download(registryUrl)
+    .pipe gulp.dest './dist'
+
+
 gulp.task 'build', ->
+  christacheioStream = new ChristacheioStream  data: hello: 'world'
   devNanocytes =
     gulp.src('./nanocyte-definitions/**/*.json')
       .pipe jsonCombine('new-nanocytes.json', (data) -> new Buffer(JSON.stringify(data, null, 2)))
@@ -27,9 +35,10 @@ gulp.task 'build', ->
   mergeStream(devNanocytes, download(registryUrl))
     .pipe order(['registry.json', 'new-nanocytes.json'])
     .pipe mergeJson('registry.json')
+    .pipe christacheioStream
+    .pipe gulp.dest './dist'
 
-
-gulp.task 'build', ->
+gulp.task '_build', ->
   mangler = new RegistryMangler
   download(registryUrl)
     .pipe jsonTransform (originalRegistry) =>

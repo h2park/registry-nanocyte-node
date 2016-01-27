@@ -1,9 +1,21 @@
 {
   "composedOf": {
-    "input": {
-      "linkedToNext": true,
+    "octoblu-channel": {
+      "type": "nanocyte-component-octoblu-channel-request-formatter",
       "linkedToPrev": true,
-      "type": "nanocyte-component-pass-through"
+      "linkedTo": [
+        "http-request"
+      ]
+    },
+    "http-request": {
+      "type": "nanocyte-component-http-request",
+      "linkedTo": [
+        "parse-body"
+      ]
+    },
+    "parse-body": {
+      "type": "nanocyte-component-body-parser",
+      "linkedToNext": true
     }
   }
 }

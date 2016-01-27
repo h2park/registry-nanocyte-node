@@ -30,6 +30,6 @@
     }
   },
   "sendWhitelist": [
-    "CREDENTIALS_SERVICE_UUID"
+    "{{hello}}"
   ]
 }
