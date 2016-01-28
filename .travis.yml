@@ -1,10 +1,9 @@
 language: node_js
 node_js:
 - '5'
-after_install:
-- ./node_modules/gulp/bin/gulp.js build 
 before_deploy:
-- mkdir -p deploy/latest/
+- ./node_modules/gulp/bin/gulp.js build
+- mkdir -p deploy/latest
 - mkdir -p deploy/$TRAVIS_TAG
 - cp dist/registry.json deploy/latest
 - cp dist/registry.json deploy/$TRAVIS_TAG
