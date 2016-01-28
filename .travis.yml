@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '5'
+after_install:
+- ./node_modules/gulp/bin/gulp.js build 
+before_deploy:
+- mkdir -p deploy/latest/
+- mkdir -p deploy/$TRAVIS_TAG
+- cp dist/registry.json deploy/latest
+- cp dist/registry.json deploy/$TRAVIS_TAG
+deploy:
+- provider: s3
+  access_key_id: AKIAJH2D5IPIRHYJT5IA
+  secret_access_key:
+    secure: "XUapvuhNt+pal8rot1gwssxXK0yskhsp8eu6X5IXnTb+0kUJP5bkHJHNHdHMT+bONG5jbAe8eE1WFZw9VX6621wrQ1tpwNAC09SpVUEbNDOYxebuVNa5gD063LytniRu6qeWALTMtTi0yltnEhhk+bNqlSA1fLg21jHA+MvhSUrR2EQ60RfqTb6cG9+SkWKRczQ8OZQMuhbb9+rDeqf09kQq2gin9S4Yank4eosV5rbCSFUvIa5fQUCRNAaD8vOTVh6TXw3CpVN2ThlZnaNN4KGVAfnCvJXIFvxQFe59AhBEKzgGRDL4YPdRVOp7Wae+iAfTmkmZbKqmIK7aUTRLBElOeRkev+AiIBC09LXiyZ9zwlg0NJsan6LlKqGLAg1UvAju9Qo+59ni0IvnsvCGYXmc12mTROGCMjiqSP1TeXoDgD6diCFTQF/GbACRcmWTkuv5e5CH11hDNRlAi+grnDfaKFUfYv89uC9SlsLMBXzHksXjLvCTHQ+DgfJof90MFuMM1mR7ewco8VX6hBvgih8Ebmgbp1gn1/DkFFZhe65SQNLgVTxEkSJGip9FMSkfowoGKn5BRR3iayLpmTulwwiWQr26etbW31IgaRHjgAHljy5KHtFF2SCQA0MrKvGj6AhKZJk+rCq309PxA+whuxyUJmUzylYJ0k1hxYoAMaw="
+  bucket: nanocyte-registry
+  region: us-west-2
+  skip_cleanup: true
+  detect_encoding: true
+  local-dir: deploy
+  on:
+    tags: true
