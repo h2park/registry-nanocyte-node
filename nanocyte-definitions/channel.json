@@ -1,14 +1,27 @@
 {
   "sendWhitelist":["{{credentials_service_uuid}}"],
   "composedOf": {
+    "set-config-on-data": {
+      "type": "nanocyte-component-set-config-on-data",
+      "linkedToPrev": true,
+      "linkedToData": true,
+      "linkedTo": ["octoblu-credentials-message-formatter"]
+    },
     "octoblu-credentials-message-formatter": {
       "type": "nanocyte-component-octoblu-credentials-message-formatter",
-      "linkedToPrev": true,
       "linkedToOutput": true
+    },
+    "pass-through-message-payload": {
+      "type": "nanocyte-component-pass-through-message-payload",
+      "linkedToInput": true,
+      "linkedTo": ["octoblu-credentials-configurator", "remove-message-on-data"]
+    },
+    "remove-message-on-data": {
+      "type": "nanocyte-component-remove-message-on-data",
+      "linkedToData": true
     },
     "octoblu-credentials-configurator": {
       "type": "nanocyte-component-octoblu-credentials-configurator",
-      "linkedToInput": true,
       "linkedTo": ["octoblu-channel"]
     },
     "octoblu-channel": {
