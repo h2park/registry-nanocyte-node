@@ -21,6 +21,7 @@
     },
     "get-key-from-data": {
       "type": "nanocyte-component-get-key-from-data",
+      "templateOriginalMessage": true,
       "linkedToNext": true
     }
   }
