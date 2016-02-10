@@ -20,7 +20,7 @@ gulp.task 'build', ->
     .pipe gulp.dest './dist'
 
 gulp.task 'watch', ->
-  gulp.watch(['./nanocyte-definitions/**/*.json'], ['build']);
+  gulp.watch(['./nanocyte-definitions/**/*.json'], ['build'])
 
 gulp.task 'server', ->
   connect.server

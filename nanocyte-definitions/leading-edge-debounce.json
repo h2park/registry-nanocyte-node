@@ -1,0 +1,36 @@
+{
+  "sendWhitelist": [
+    "{{interval_service_uuid}}"
+  ],
+  "composedOf": {
+    "register": {
+      "type": "nanocyte-component-interval-register",
+      "linkedToPrev": true,
+      "linkedToOutput": true
+    },
+    "unregister": {
+      "type": "nanocyte-component-interval-unregister",
+      "linkedFromStop": true,
+      "linkedToOutput": true
+    },
+    "pass-through-unless-blocked": {
+      "type":"nanocyte-component-pass-through-unless-blocked",
+      "linkedToPrev": true,
+      "linkedToNext": true,
+      "linkedTo": ["block-pass-through"]
+    },
+    "block-pass-through": {
+      "type":"nanocyte-component-block-pass-through",
+      "linkedToData": true
+    },
+    "handle-errors": {
+      "type": "nanocyte-component-input-error",
+      "linkedToInput": true,
+      "linkedTo": ["clear"]
+    },
+    "clear": {
+      "type": "nanocyte-component-clear-data",
+      "linkedToData": true
+    }
+  }
+}
