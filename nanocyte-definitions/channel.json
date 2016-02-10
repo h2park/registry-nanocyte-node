@@ -1,5 +1,7 @@
 {
-  "sendWhitelist":["{{credentials_service_uuid}}"],
+  "sendWhitelist": [
+    "{{credentials_service_uuid}}"
+  ],
   "composedOf": {
     "set-config-on-data": {
       "type": "nanocyte-component-set-config-on-data",

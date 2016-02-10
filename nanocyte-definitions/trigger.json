@@ -1,6 +1,6 @@
 {
   "sendWhitelist": [
-    "b560b6ee-c264-4ed9-b98e-e3376ce6ce64"
+    "{{triggers_service_uuid}}"
   ],
   "composedOf": {
     "trigger": {
