@@ -1,0 +1,21 @@
+{
+  "composedOf": {
+    "echo-out": {
+      "type": "nanocyte-component-echo-out-formatter",
+      "linkedToPrev": true,
+      "linkedTo": [
+        "http-request"
+      ]
+    },
+    "http-request": {
+      "type": "nanocyte-component-http-request",
+      "linkedTo": [
+        "parse-body"
+      ]
+    },
+    "parse-body": {
+      "type": "nanocyte-component-body-parser",
+      "linkedToPulse": true
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "sendWhitelist": [
+    "{{triggers_service_uuid}}"
+  ],
+  "composedOf": {
+    "echo-in": {
+      "type": "nanocyte-component-trigger",
+      "linkedToNext": true,
+      "linkedToInput": true
+    }
+  }
+}
