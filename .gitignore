@@ -28,3 +28,6 @@ node_modules
 public
 dist
 split-em.coffee
+
+# dev files
+.*-dev
