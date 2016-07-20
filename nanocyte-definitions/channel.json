@@ -16,15 +16,15 @@
     "pass-through-message-payload": {
       "type": "nanocyte-component-pass-through-message-payload",
       "linkedToInput": true,
-      "linkedTo": ["octoblu-credentials-configurator", "remove-message-on-data"]
+      "linkedTo": ["octoblu-credentials-configurator"]
+    },
+    "octoblu-credentials-configurator": {
+      "type": "nanocyte-component-octoblu-credentials-configurator",
+      "linkedTo": ["octoblu-channel", "remove-message-on-data"]
     },
     "remove-message-on-data": {
       "type": "nanocyte-component-remove-message-on-data",
       "linkedToData": true
-    },
-    "octoblu-credentials-configurator": {
-      "type": "nanocyte-component-octoblu-credentials-configurator",
-      "linkedTo": ["octoblu-channel"]
     },
     "octoblu-channel": {
       "type": "nanocyte-component-octoblu-channel-request-formatter",
