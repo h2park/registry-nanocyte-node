@@ -1,0 +1,20 @@
+{
+  "composedOf": {
+    "pass-through": {
+      "type": "nanocyte-component-pass-through",
+      "linkedToInput": true,
+      "linkedToNext": true
+    },
+    "use-static-message": {
+      "type": "nanocyte-component-use-static-message",
+      "linkedToPrev": true,
+      "linkedTo": [
+        "meshblu-update"
+      ]
+    },
+    "meshblu-update": {
+      "type": "nanocyte-component-meshblu-configure",
+      "linkedToUpdate": true
+    }
+  }
+}
