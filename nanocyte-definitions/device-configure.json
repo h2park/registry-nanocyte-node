@@ -6,7 +6,7 @@
       "linkedToNext": true
     },
     "use-static-message": {
-      "type": "nanocyte-component-use-static-message",
+      "type": "nanocyte-component-static-message-to-update",
       "linkedToPrev": true,
       "linkedTo": [
         "meshblu-update"
