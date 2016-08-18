@@ -4,7 +4,7 @@
   ],
   "composedOf": {
     "register": {
-      "type": "nanocyte-component-interval-register",
+      "type": "nanocyte-component-interval-transaction-register",
       "linkedToPrev": true,
       "linkedToOutput": true
     },
@@ -13,8 +13,8 @@
       "linkedFromStop": true,
       "linkedToOutput": true
     },
-    "collect-message": {
-      "type": "nanocyte-component-push-message-on-data",
+    "add-message": {
+      "type": "nanocyte-component-set-message-on-data",
       "linkedToPrev": true,
       "linkedToData": true
     },
@@ -22,16 +22,16 @@
       "type": "nanocyte-component-input-error",
       "linkedToInput": true,
       "linkedTo": [
-        "shift-send",
-        "shift-messages"
+        "get-message",
+        "remove-message"
       ]
     },
-    "shift-send": {
-      "type": "nanocyte-component-shift-send",
+    "get-message": {
+      "type": "nanocyte-component-get-message-from-data",
       "linkedToNext": true
     },
-    "shift-messages": {
-      "type": "nanocyte-component-shift-messages",
+    "remove-message": {
+      "type": "nanocyte-component-remove-message-on-data",
       "linkedToData": true
     }
   }
