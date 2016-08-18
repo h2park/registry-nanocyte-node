@@ -3,9 +3,13 @@
     "{{interval_service_uuid}}"
   ],
   "composedOf": {
+    "pass-through-message": {
+      "type": "nanocyte-component-pass-through",
+      "linkedToPrev": true,
+      "linkedTo": ["register", "add-message"]
+    },
     "register": {
       "type": "nanocyte-component-interval-transaction-register",
-      "linkedToPrev": true,
       "linkedToOutput": true
     },
     "unregister": {
@@ -15,7 +19,6 @@
     },
     "add-message": {
       "type": "nanocyte-component-set-message-on-data",
-      "linkedToPrev": true,
       "linkedToData": true
     },
     "handle-errors": {
