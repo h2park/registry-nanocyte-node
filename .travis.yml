@@ -1,6 +1,9 @@
 language: node_js
 node_js:
 - '5'
+branches:
+  only:
+  - "/^v[0-9]/"
 before_deploy:
 - ./node_modules/gulp/bin/gulp.js clean 
 - ./node_modules/gulp/bin/gulp.js build:all
