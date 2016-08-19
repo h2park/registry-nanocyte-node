@@ -53,4 +53,6 @@ gulp.task 'server', ->
     port: process.env.PORT || 9999
     middleware: -> [cors()]
 
+gulp.task 'build:all', ['clean', 'build', 'build:major', 'build:hpe']
+
 gulp.task 'default', ['clean', 'build', 'watch', 'server']
