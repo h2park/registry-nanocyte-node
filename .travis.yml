@@ -2,6 +2,7 @@ language: node_js
 node_js:
 - '5'
 before_deploy:
+- ./node_modules/gulp/bin/gulp.js clean 
 - ./node_modules/gulp/bin/gulp.js build:all
 - mkdir -p deploy/latest && mkdir -p deploy/$TRAVIS_TAG
 - cp -r dist/* deploy/latest && cp -r dist/* deploy/$TRAVIS_TAG
