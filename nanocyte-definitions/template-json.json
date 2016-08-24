@@ -1,0 +1,9 @@
+{
+  "composedOf": {
+    "template-json": {
+      "type": "nanocyte-component-template-json",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    }
+  }
+}
