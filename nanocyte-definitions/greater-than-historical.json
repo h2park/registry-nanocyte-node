@@ -1,0 +1,18 @@
+{
+  "composedOf": {
+    "greater-than-historical": {
+      "type": "nanocyte-component-greater-than-historical",
+      "linkedToPrev": true,
+      "linkedToNext": true
+    },
+    "pass-through-unless-data": {
+      "type": "nanocyte-component-pass-through-unless-data",
+      "linkedToPrev": true,
+      "linkedTo": ["add-message"]
+    },
+    "add-message": {
+      "type": "nanocyte-component-set-config-on-data",
+      "linkedToData": true
+    }
+  }
+}
