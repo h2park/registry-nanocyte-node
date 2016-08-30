@@ -4,7 +4,7 @@
   ],
   "composedOf": {
     "set-config-on-data": {
-      "type": "nanocyte-component-set-config-on-data",
+      "type": "nanocyte-component-set-config-on-data-with-transaction",
       "linkedToPrev": true,
       "linkedToData": true,
       "linkedTo": ["octoblu-credentials-message-formatter"]
