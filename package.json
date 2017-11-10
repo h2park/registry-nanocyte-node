@@ -1,5 +1,5 @@
 {
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "Octoblu Inc.",
   "bugs": {
     "url": "https://github.com/octoblu/nanocyte-node-registry-local/issues"
@@ -33,7 +33,7 @@
   ],
   "license": "MIT",
   "main": "gulpfile.js",
-  "name": "nanocyte-node-registry-local",
+  "name": "registry-nanocyte-node",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/octoblu/nanocyte-node-registry-local.git"
